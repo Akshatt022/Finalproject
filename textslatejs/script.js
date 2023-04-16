@@ -1,0 +1,1 @@
+$('#page h1').textillate({ in: { effect: 'fadeInDown' } });

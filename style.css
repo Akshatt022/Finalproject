@@ -50,6 +50,7 @@ svg{
     left: 50%;
     transform: translate(-50%,-50%) scale(1.3);
     z-index: 99;
+    fill: #111;
 }
 #page1 h1{
     font-family: america-b;
@@ -96,7 +97,7 @@ position: absolute;
 word-spacing: 5px;
 background-image: url(./buttonDarkBg.svg);
 scale: 0;
-transition: all ease-out 0.2s;
+transition: all ease-out 0.3s;
 }
 #page2{
     min-height: 100vh;
@@ -117,24 +118,149 @@ transition: all ease-out 0.2s;
     letter-spacing: -2px;
     text-align: center;
     background-image: url(https://cdn.sanity.io/images/sjvffa0f/production/217c65c6aa3412acac7b3d2fa8adc9020e487780-2724x1936.jpg/map.jpg?rect=0,1,2724,1935&w=1440&h=1023&auto=format);
-    background-position: 0 100000%; 
+    background-position: 0 -40%; 
+    position: relative;
 }
-#page2::before{
+#page2 h1::before{
     content: "THE REPRESENTATION YOU DESERVE";
+    letter-spacing: 1PX;
+    text-align: left;
+    padding: 0;
+    line-height:20px;
+    word-spacing: 1PX;
     font-size: 1.2vw;
-    width: 10%;
+    width: 12%;
     font-family: america;
     position: absolute;
-    bottom: 19%;
+    top: 85%;
     left: 9%;
 }
-#page2::after{
-    content: "ONE OF AMERICA’S BEST BROKERAGES";
+#page2 h1::after{
+    content: "THE REPRESENTATION YOU DESERVE";
+    letter-spacing: 1PX;
+    text-align: right;
+    padding: 0;
+    line-height:20px;
+    word-spacing: 1PX;
     font-size: 1.2vw;
-    width: 10%;
+    width: 12%;
     font-family: america;
     position: absolute;
-    bottom: 19%;
+    top: 85%;
     right: 9%;
-    text-align: right;
+    font-weight: 100;
+}
+
+#page2 img{
+    width: 40%;
+    height: 40%;
+    position: relative;
+    margin-top: -8%;
+    bottom: 40%;
+    left: 29%;
+    rotate: 10deg;
+}
+#page2 h2{
+    font-size: 14vw;
+    font-family: america-b;
+    color: #111;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height:11vw;
+    word-spacing: -10px;
+    padding: 100px 50px;
+    letter-spacing: -2px;
+    text-align: center;
+    position: relative;
+    margin-top: -10%
+}
+#page2 h2::after{
+    content:"THIRD GENERATION FAMILY-OWNED RANCH BROKERAGE";
+    font-size: 15px;
+    line-height: 60px;
+    word-spacing: 0;
+    letter-spacing: 0;
+    padding: 0;
+    font-family: america;
+    position: absolute;
+    top: 80%;
+}
+#page3{
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    background-color: #111;
+    padding: 100px 120px;
+}
+#page3 h1{
+color: #ffffffe4;
+font-size: 9vw;
+font-family: america;
+text-align: center;
+line-height: 8vw;
+word-spacing: 0vw;
+letter-spacing: -.3vw;
+text-transform: uppercase;
+}
+#page3 h2{
+ font-size: 7vw;
+ color: #ffffffe4;
+ text-align: center;
+ text-transform: uppercase;
+ font-weight: 100;
+ font-family: america;
+ margin-left: auto;
+ margin-right: auto;
+ line-height: 5vw;
+}
+#page3 p{
+    color: #ffffffe4;    
+    font-size: 1vw; 
+    width: 50%;
+    font-weight: 600;
+    font-family: gilroy;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2vw;
+    text-transform: uppercase;
+}
+#overlay1{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: #c45508;
+}
+#scroll1{
+    width: 150px;
+    height: 150px;
+    background-image: url(https://cdn.sanity.io/images/sjvffa0f/production/9b2b1e20d57cf6988eb3192c1a261b8475d701d4-8192x5464.jpg/JRP_BR_01_1165-Edit.jpg?rect=1038,632,3956,4832&bg=F2F1EC&fp-x=0.3681506849315068&fp-y=0.5578489448352462&w=1440&h=1835&fit=crop&crop=focalpoint&auto=format);
+    background-repeat: no-repeat;
+    background-size: calc(160%);
+    background-position: 50% 50%;
+    position: absolute;
+    display: flex;
+    align-items: end;
+    opacity: 0;
+    cursor: pointer;
+    transition: cubic-bezier(0.19, 1, 0.22, 1)0.1s;
+}
+.box{
+    width: 100%;
+    height: 40px;
+    background-color: #fff;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: america;
+    font-size: 19px;
+}
+
+
+#page4{
+    min-height: 100vh;
+    width: 100%;
+    background-color: #000;
 }
