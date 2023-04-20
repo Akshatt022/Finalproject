@@ -1,4 +1,5 @@
-gsap.registerPlugin(ScrollTrigger);
+function init(){
+  gsap.registerPlugin(ScrollTrigger);
 
 // Using Locomotive Scroll from Locomotive https://github.com/locomotivemtl/locomotive-scroll
 
@@ -26,6 +27,8 @@ ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
 
 // after everything is set up, refresh() ScrollTrigger and update LocomotiveScroll because padding may have been added for pinning, etc.
 ScrollTrigger.refresh();
+}
+init()
 
 gsap.to("#page2 img",{
    rotate:-15,
@@ -67,76 +70,68 @@ page3.addEventListener("mousemove",function(ee){
   scroll1.style.top = `${ee.y}px`
 })
 
-gsap.to("svg",{
+
+var t1 = gsap.timeline({
+  scrollTrigger:{
+    trigger:"svg",
+    scroller:"#main",
+    start:"top 45%",
+    end:"top -50%",
+    scrub:true,
+}
+})
+t1.to("svg",{
   scale:1,
   top:"5%",
   fill:"#111",
-  scrollTrigger:{
-      trigger:"svg",
-      scroller:"#main",
-      start:"top 45%",
-      end:"top -50%",
-      scrub:true,
-  }
+ 
 }) 
 
-
-
-
-gsap.to("#nav",{
+t1.to("#nav",{
   color:"#111",
   background: "linear-gradient(#ffffffeb,#ffffff6e,#ffffff00)",
-  scrollTrigger:{
-      trigger:"#nav h3",
-      scroller:"#main",
-      start:"top -100%",
-      end:"top -100%",
-      scrub:true,
-  }
-})
-gsap.to("#nav h3",{
-  color:"#111",
-  scrollTrigger:{
-      trigger:"#nav h3",
-      scroller:"#main",
-      start:"top -100%",
-      end:"top -100%",
-      scrub:true,
-  }
 })
 
-gsap.to("svg",{
+var t2 = gsap.timeline({
+  scrollTrigger:{
+    trigger:"svg",
+    scroller:"#main",
+    start:"top -350%",
+    end:"top -350%",
+    scrub:true,
+}
+})
+
+
+t2.to("svg",{
   scale:1,
   top:"5%",
   fill:"#fff",
-  scrollTrigger:{
-      trigger:"svg",
-      scroller:"#main",
-      start:"top -350%",
-      end:"top -350%",
-      scrub:true,
-  }
 })
-gsap.to("#nav",{
-  color:"#fff",
+ t2.to("#nav",{
+ color:"#fff",
   background: "linear-gradient(#000000d5,#00000089,#00000000)",
-  scrollTrigger:{
-      trigger:"#nav h3",
-      scroller:"#main",
-      start:"top -400%",
-      end:"top -400%",
-      scrub:true,
-  }
-})
-gsap.to("#nav h3",{
-  color:"#fff",
-  scrollTrigger:{
-      trigger:"#nav h3",
-      scroller:"#main",
-      start:"top -400%",
-      end:"top -400%",
-      scrub:true,
-  }
 })
 
-$('#page1 h1').textillate({ in: { effect: 'fadeInDown' } });
+
+
+gsap.from("#page2 h1",{
+  duration:0.5,
+  onStart: function() {
+    $('#page2 h1').textillate({ in: { effect: 'fadeInDown' } });
+  },
+})
+document.querySelector("#page4").addEventListener("mousemove", function (dets) {
+  document.querySelector("#page4>img").style.left = (dets.x)+ "px"
+  document.querySelector("#page4>img").style.top = (dets.y) + "px"
+  document.querySelector("#page4>button").style.left = (dets.x + 50) + "px"
+  document.querySelector("#page4>button").style.top = (dets.y + 200) + "px"
+})
+
+var elem = document.querySelectorAll("#elem")
+elem.forEach(function(e){
+   var a = e.getAttribute("data-img")
+   e.addEventListener("mousemove",function(){
+    document.querySelector("#page4>img").setAttribute("src",a)
+   })
+})
