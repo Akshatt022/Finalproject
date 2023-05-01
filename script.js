@@ -218,8 +218,8 @@ gsap.to("#page5", {
   scrollTrigger: {
       trigger: "#page5",
       scroller: "#main",
-      start: "top -25%",
-      end: "top -100%",
+      start: "top 10%",
+      end: "top 100%",
       scrub: true,
       pin: true,
       // markers: true
