@@ -145,7 +145,7 @@ tl2.to("svg", {
   fill: "#fff",
 
 })
-tl2.to("#nav", {
+tl.to("#nav", {
   color: "#fff",
   background: "linear-gradient(#000000d5,#00000089,#00000000)",
 })
