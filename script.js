@@ -80,29 +80,29 @@ page3.addEventListener("mousemove",function(ee){
   scroll1.style.top = `${ee.y}px`
 })
 
-$('#page1 h1').textillate({
-  in: {
-      effect: 'fadeInUp',
-      delayScale: 1,
-  }
-});
+// $('#page1 h1').textillate({
+//   in: {
+//       effect: 'fadeInUp',
+//       delayScale: 1,
+//   }
+// });
 
-gsap.from("#page2 h1", {
-  duration: 0.5,
-  onStart: function () {
-      $('#page2 h1').textillate({
-          in: {
-              effect: 'bounceIn',
-              delayScale: 0.5,
-          }
-      });
-  },
-  scrollTrigger: {
-      trigger: "#page2 h1",
-      scroller: "#main",
-      start: "top 90%"
-  }
-})
+// gsap.from("#page2 h1", {
+//   duration: 0.5,
+//   onStart: function () {
+//       $('#page2 h1').textillate({
+//           in: {
+//               effect: 'bounceIn',
+//               delayScale: 0.5,
+//           }
+//       });
+//   },
+//   scrollTrigger: {
+//       trigger: "#page2 h1",
+//       scroller: "#main",
+//       start: "top 90%"
+//   }
+// })
 
 var tl = gsap.timeline({
   scrollTrigger: {
@@ -110,7 +110,7 @@ var tl = gsap.timeline({
       scroller: "#main",
       // markers: true,
       start: "top 0%",
-      end: "top -200%",
+      end: "top -150%",
       scrub: true,
   }
 })
@@ -149,55 +149,6 @@ tl2.to("#nav", {
   color: "#fff",
   background: "linear-gradient(#000000d5,#00000089,#00000000)",
 })
-
-// Make a timeline to pin svg and change color of nav to black
-var tl = gsap.timeline({
-  scrollTrigger: {
-      trigger: "svg",
-      scroller: "#main",
-      // markers: true,
-      start: "top 0%",
-      end: "top -140%",
-      scrub: true,
-  }
-})
-
-tl.to("svg", {
-  scale: 1,
-  top: "5%",
-  fill: "#111",
-
-})
-
-
-tl.to("#nav", {
-  color: "#111",
-  background: "linear-gradient(#ffffffeb,#ffffff6e,#ffffff00)",
-})
-
-// Make a timeline again to change color of nav and svg to white
-
-var tl2 = gsap.timeline({
-  scrollTrigger: {
-      trigger: "svg",
-      scroller: "#main",
-      // markers: "true",
-      start: "top -340%",
-      end: "top -340%",
-      scrub: true,
-  }
-})
-tl2.to("svg", {
-  scale: 1,
-  top: "5%",
-  fill: "#fff",
-
-})
-tl2.to("#nav", {
-  color: "#fff",
-  background: "linear-gradient(#000000d5,#00000089,#00000000)",
-})
-
 
 document.querySelector("#page4").addEventListener("mousemove", function (dets) {
   document.querySelector("#page4>img").style.left = (dets.x)+ "px"
@@ -214,26 +165,23 @@ elem.forEach(function(e){
    })
 })
 
-gsap.to("#page5", {
+gsap.from("#page5", {
   scrollTrigger: {
       trigger: "#page5",
       scroller: "#main",
       start: "top 10%",
-      end: "top 100%",
-      scrub: true,
       pin: true,
-      // markers: true
+      scrub: 1,
   }
 })
 gsap.from("#div-2",{
-  y:500,
+  y:600,
   scrollTrigger:{
       trigger:"#div-2",
       scroller:"#main",
-      start:"top 80%",
-      end:"top 50%",
+      start:"top 50%",
+      end:"top 90%",
       scrub:2,
-      markers:true
   }
 })
 
